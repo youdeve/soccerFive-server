@@ -1,13 +1,14 @@
-{% extends base.html.twig %}
+{% extends 'base.html.twig' %}
 
   {% block javascripts %}
-
+    <script src="{{ asset('build/slick-carousel.js') }}"></script>
   {% endblock %}
 
   {% block styles %}
-
+    <link rel="stylesheet" href="{{ asset('build/slick-carousel.css') }}"/>
   {% endblock %}
 
   {% block main %}
-  TEST super
+  
+
   {% endblock  %}

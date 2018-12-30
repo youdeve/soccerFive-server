@@ -1,6 +1,10 @@
 {
   "devDependencies": {
     "@symfony/webpack-encore": "^0.22.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.0.1",
+    "vue-loader": "^15.4.0",
+    "vue-template-compiler": "^2.5.17",
     "webpack-notifier": "^1.6.0"
   },
   "license": "UNLICENSED",
@@ -12,6 +16,12 @@
     "build": "encore production --progress"
   },
   "dependencies": {
-    "slick-carousel": "^1.8.1"
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "imagehover.css": "ciar4n/imagehover.css",
+    "materialize-css": "^1.0.0-rc.2",
+    "slick-carousel": "^1.8.1",
+    "vue": "^2.5.21",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.21"
   }
 }

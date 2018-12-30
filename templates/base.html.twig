@@ -1,47 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,500,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="{{ asset('build/images/favicon.png') }}"/>
-        <title>{% block title %}SoccerFive{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block preJavascripts %}{% endblock %}
-        {% block noscript %}
-          <noscript>
-            <div class="center">
-              <p>
-                <i class="fa fa-info-circle"></i> Ce site a besoin de JavaScript pour fonctionner.
-                <a href='http://enable-javascript.com/fr/' target="_blank" title='Activer Javascript dans votre navigateur'>
-                 Comment et pourquoi activer JavaScript ?
-                </a>
-              </p>
-            </div>
-          </noscript>
-        {% endblock %}
-        {% block nav %}
-          <nav>
-            <li>
-              <a href="#"></a>
-            </li>
-          </nav>
-        {% endblock %}
-        <main>
-          {% block main %}{% endblock %}
-        </main>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,500,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+  <link rel="icon" type="image/x-icon" href=""/>
+  <title>{% block title %}SoccerFive{% endblock %}</title>
+  {% block stylesheets %}{% endblock %}
+</head>
+<body>
+  {% block preJavascripts %}{% endblock %}
+  {% block noscript %}
+  <noscript>
+    <div class="center">
+      <p>
+        <i class="fa fa-info-circle"></i> Ce site a besoin de JavaScript pour fonctionner.
+        <a href='http://enable-javascript.com/fr/' target="_blank" title='Activer Javascript dans votre navigateur'>
+          Comment et pourquoi activer JavaScript ?
+        </a>
+      </p>
+    </div>
+  </noscript>
+  {% endblock %}
+  {% block nav %}
+  {% set path = app.request.pathinfo %}
+  <nav>
+    <nav>
+      <div class="nav-wrapper">
+        <a id="logo-container" href="{{ path('homepage') }}" class="brand-logo z-index-200"
+        title="Accueil Kabolt">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
+  </nav>
+  {% endblock %}
+  <main>
+    {% block main %}{% endblock %}
+  </main>
 
-      {% block footer %}
-        <footer>
-
-        </footer>
-      {% endblock %}
-      <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-      <script src="{{ asset('build/app.js') }}"></script>
-      {% block javascripts %}{% endblock %}
-    </body>
+  {% block footer %}
+  <footer class="page-footer">
+    <div class="container red">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+  {% endblock %}
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <script src="{{ asset('build/app.js') }}"></script>
+  {% block javascripts %}{% endblock %}
+</body>
 </html>

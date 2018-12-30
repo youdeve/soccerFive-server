@@ -9,19 +9,15 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends AbstractController
 {
   /**
-   * @Route('/', name="homepage")
+   * @Route("/", name="homepage")
    */
   public function homePage(Request $request)
   {
-     // $locale = $request->getLocale() ?? 'fr';
-
-     return $this->render('pages/homepage.html.twig', [
-        // 'typedPhrases' => Utils::getTypedPhrases($locale)
-    ]);
+     return $this->render('pages/homepage.html.twig');
   }
 
   /**
-   * @Route('/reserver', name="book")
+   * @Route("/reserver", name="book")
    */
   public function book()
   {
