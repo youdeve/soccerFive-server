@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,500,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="{{ asset('build/images/favicon.png') }}"/>
+        <title>{% block title %}SoccerFive{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block preJavascripts %}{% endblock %}
+        {% block noscript %}
+          <noscript>
+            <div class="center">
+              <p>
+                <i class="fa fa-info-circle"></i> Ce site a besoin de JavaScript pour fonctionner.
+                <a href='http://enable-javascript.com/fr/' target="_blank" title='Activer Javascript dans votre navigateur'>
+                 Comment et pourquoi activer JavaScript ?
+                </a>
+              </p>
+            </div>
+          </noscript>
+        {% endblock %}
+        {% block nav %}
+          <nav>
+
+          </nav>
+        {% endblock %}
+        <main>
+          {% block main %}{% endblock %}
+        </main>
+
+      {% block footer %}
+        <footer>
+          
+        </footer>
+      {% endblock %}
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+      <script src="{{ asset('build/app.js') }}"></script>
+      {% block javascripts %}{% endblock %}
     </body>
 </html>
