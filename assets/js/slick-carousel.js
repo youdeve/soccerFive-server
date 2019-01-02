@@ -1,33 +1,6 @@
-// import {tns} from "../../node_modules/slick-carousel/"
+// import "../../node_modules/slick-carousel/slick/slick.js"
 
-// require('slick/slick.css');
-
-$(".slider").slick({
-
-  // normal options...
-  infinite: false,
-
-  // the magic
-  responsive: [{
-
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        infinite: true
-      }
-
-    }, {
-
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        dots: true
-      }
-
-    }, {
-
-      breakpoint: 300,
-      settings: "unslick" // destroys slick
-
-    }]
-});
+require('jquery/dist/jquery.min.js');
+require('slick-carousel/slick/slick-theme.scss');
+require('slick-carousel/slick/slick.scss');
+require('slick-carousel/slick/slick.min.js');

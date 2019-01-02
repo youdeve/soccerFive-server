@@ -27,18 +27,19 @@
   {% endblock %}
   {% block nav %}
   {% set path = app.request.pathinfo %}
-  <nav>
-    <nav>
-      <div class="nav-wrapper">
-        <a id="logo-container" href="{{ path('homepage') }}" class="brand-logo z-index-200"
-        title="Accueil Kabolt">
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-      </div>
-    </nav>
+  <nav class="logo-nav">
+   <div class="nav-wrapper black">
+     <a href="" class="brand-logo center"> <img src="{{ asset("build/images/soccerfive-logo-.png") }}" alt=""> </a>
+   </div>
+ </nav>
+  <nav class="soccer-nav">
+    <div class="nav-wrapper white">
+      <ul id="nav-mobile" class="left black-text hide-on-med-and-down">
+        <li><a href="sass.html">Accueil</a></li>
+        <li><a href="badges.html">News</a></li>
+        <li><a href="collapsible.html">contact</a></li>
+      </ul>
+    </div>
   </nav>
   {% endblock %}
   <main>
@@ -47,26 +48,27 @@
 
   {% block footer %}
   <footer class="page-footer">
-    <div class="container red">
+    <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
+          <h5 class="white-text">SoccerFive</h5>
           <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+          <h5 class="white-text">Plan du site</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Accueil</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">news</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Activité</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Video</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2014 Copyright Text
+        © 2019 Copyright
         <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
     </div>
@@ -74,6 +76,7 @@
   {% endblock %}
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
   <script src="{{ asset('build/app.js') }}"></script>
-  {% block javascripts %}{% endblock %}
+  {% block javascripts %}
+  {% endblock %}
 </body>
 </html>
