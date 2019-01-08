@@ -10,7 +10,7 @@ Encore
     .enableSingleRuntimeChunk()
 
     .cleanupOutputBeforeBuild()
-    .enableBuildNotifications()
+    // .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
@@ -19,7 +19,7 @@ Encore
     })
 
     .addEntry('app', './assets/js/app.js')
-    // .addEntry('css', './assets/sass/app.sass')  
+    .addEntry('fullcalendar', './assets/js/full-calendar.js')
     .addEntry('slick-carousel', './assets/js/slick-carousel.js')
 
     .enableSassLoader()

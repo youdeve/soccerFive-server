@@ -1,26 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
-<script src="{{ asset('build/slick-carousel.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+
 <script type="text/javascript">
 $(document).on('ready', function () {
   $(".regular").slick({
     dots: true,
     autoplay: true,
-    slidesToShow: 2,
+    slidesToShow: 1,
     arrows: true,
-    slidesToScroll: 2
+    slidesToScroll: 1
   });
 });
 </script>
 {% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ asset('build/slick-carousel.css') }}"/>
 {% endblock %}
 
 {% block main %}
@@ -38,16 +37,17 @@ $(document).on('ready', function () {
     <img src="{{ asset("build/images/image2.jpg")}}">
   </div>
 </section>
+
 <div class="container-news">
   <div class="row">
     <div class="col l12 s12 m12">
       <h4>LES ACTUALITÉS
-        <strong class="orange-text">
+        <strong>
           SOCCER FIVE
         </strong>
       </h4>
       <hr>
-      <div class="l12 s12 m12">
+      <div class="">
         <div class="col s12 l4">
           <div class="card">
             <div class="card-image">

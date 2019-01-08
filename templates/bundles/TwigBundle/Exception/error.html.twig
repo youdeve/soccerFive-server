@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block styles %}
+  <style>
+    .bg-404 {
+      background: url("{{ asset('build/images/404-bg.png') }}") no-repeat center bottom;
+      background-size: contain;
+    }
+
+    .status-code {
+      font-size: 106px;
+      position: relative;
+      bottom: 1px;
+      left: -164px;
+    }
+  </style>
+
+{% endblock %}
+
+{% block main %}
+  <div class="background-kb-light fixed-bg">
+    <div class="section valign-wrapper z-depth-2 secondary-bg">
+      <div class="container center">
+        <h3 class="header verylight white-text">
+          {% if status_code == 404 %}
+            <i class="fas fa-map-signs"></i> {{ 'error404.title'|trans }}
+          {% else %}
+            {{ 'error.title'|trans }} <i class="far fa-dizzy"></i>
+          {% endif %}
+        </h3>
+      </div>
+    </div>
+
+    <div class="min-height-500 bg-404 hide-on-med-and-down">
+      <div class="center">
+        <div class="status-code secondary-text">{{ status_code }}</div>
+        <a href="{{ path('homepage') }}"
+           class="btn-large section-btn bold rounded waves-effect waves-light hoverable"
+           style="position: relative;bottom: -245px;left: 150px;">
+          <i class="fas fa-home left"></i> {{ 'back'|trans }} {{ 'nav.home'|trans }}
+        </a>
+        <a href="{{ path('services') }}"
+           class="btn-large section-btn bold rounded waves-effect waves-light hoverable"
+           style="position: relative;bottom: -175px;left: 278px;">
+          <i class="fas fa-concierge-bell right"></i> {{ 'nav.services'|trans }}
+        </a>
+        <a href="{{ path('expertises') }}"
+           class="btn-large section-btn bold rounded waves-effect waves-light hoverable"
+           style="position: relative;bottom: 112px;left: 59px;">
+          <i class="fas fa-certificate right"></i> {{ 'nav.expertises'|trans }}
+        </a>
+        <a href="{{ path('contact') }}"
+           class="btn-large section-btn bold rounded waves-effect waves-light hoverable"
+           style="position: relative;bottom: -49px;left: -587px;">
+          <i class="fas fa-envelope left"></i> {{ 'nav.contact'|trans }}
+        </a>
+      </div>
+
+    </div>
+
+    <div class="container row hide-on-large-only margin-bottom-2em margin-top-2em">
+      <div class="col s12">
+        <h2 class="center">Erreur {{ status_code }}</h2>
+      </div>
+      <div class="col s12 center-align margin-top-2em">
+        <a href="{{ path('homepage') }}" class="btn-large section-btn bold rounded waves-effect waves-light">
+          {{ 'nav.home'|trans }}
+        </a>
+        <!-- <a href="{{ path('services') }}" class="btn-large section-btn bold rounded waves-effect waves-light">
+          {{ 'nav.services'|trans }}
+        </a>
+        <a href="{{ path('expertises') }}" class="btn-large section-btn bold rounded waves-effect waves-light">
+          {{ 'nav.expertises'|trans }}
+        </a>
+        <a href="{{ path('references') }}" class="btn-large section-btn bold rounded waves-effect waves-light">
+          {{ 'nav.references'|trans }}
+        </a>
+        <a href="{{ path('jobs') }}" class="btn-large section-btn bold rounded waves-effect waves-light">
+          {{ 'nav.jobs'|trans }}
+        </a>
+
+        <a href="{{ path('contact') }}" class="btn-large section-btn bold rounded waves-effect waves-light">
+          {{ 'nav.contact'|trans }}
+        </a> -->
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}
