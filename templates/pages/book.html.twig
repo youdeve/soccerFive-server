@@ -1,13 +1,70 @@
 {% extends 'base.html.twig' %}
 
-  {% block javascripts %}
+{% block title %}Soccer five - BOOKING{% endblock %}
+{% block metaTitle %}foot en salle{% endblock %}
+{% block metaDescription %}{% endblock %}
 
-  {% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+{% endblock %}
 
-  {% block styles %}
+{% block javascripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ asset("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js") }}" ></script>
+<script src="{{ asset("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js") }}" ></script>
+<script src="{{ asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js") }}" ></script>
 
-  {% endblock %}
+<script type="text/javascript">
 
-  {% block main %}
-  TEST super
-  {% endblock  %}
+$(document).ready(function() {
+  $('#calendar').fullCalendar({
+    defaultView: 'agendaWeek',
+    header: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'agendaDay,month,agendaWeek'
+    },
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    businessHours: {
+      // days of week. an array of zero-based day of week integers (0=Sunday)
+      dow: [ 1, 2, 3, 4, 5, 6, 7 ], // Monday - sunday
+      start: '9:00', // a start time (10am in this example)
+      end: '21:00', // an end time (6pm in this example)
+    },
+    slotLabelFormat: [
+      'MMMM YYYY', // top level of text
+      'ddd'        // lower level of text
+    ],
+    slotDuration:"00:30:00",
+    defaultTimedEventDuration: "01:00:00",
+    displayEventTime: true,
+    // locale: "fr",
+    nowIndicator:true,
+    maxTime:"21:00",
+    minTime:"9:00",
+    selectOverlap: false,
+    unselectAuto: true,
+    allDaySlot: false,
+    timeFormat:'HH:mm',
+    slotLabelFormat:"HH:mm",
+    axisFormat: 'HH:mm',
+    selectable: true,
+    select: function(startEvent, endEvent, jsEvent, view) {
+      var startAppointment = moment(startEvent.format('YYYY/MM/DD HH:mm:ss')).format('YYYY/MM/DD HH:mm:ss');
+      $('#calendar').fullCalendar('renderEvent', {title: "Booked",start: moment(startAppointment).format() }, 'stick');
+    },
+  });
+});
+</script>
+{% endblock %}
+
+{% block main %}
+<div class="container-fullcalendar">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div id="calendar"></div>
+    </div>
+  </div>
+</div>
+{% endblock  %}

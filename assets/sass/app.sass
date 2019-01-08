@@ -1,64 +1,75 @@
 @import "variables"
 @import "../../node_modules/materialize-css/sass/materialize"
+
+body
+  background-color: $terciary-color
 .logo-nav
   height: 120px
-.soccer-nav
-  color: $secondary-color!important
-  div
-    background: $primary-color
 .page-footer
   background-color: $primary-color
 .regular
   width: 100%
   margin: 0
+  height: 400px
   overflow: hidden
   img
     width: 100%
+.accompte-soccer
+  margin: 50px 30px
+  i
+    padding-left: 50px
+    vertical-align: middle!important
+  strong
+    padding: 10px
+    border: 2px solid
+    font-size: 20px
+.blackSoccer
+  background-color: black
+/***** LOGO Text CUSTOM ******/
+.logo-text-custom
+  width: 100%
+  display: block
+  text-align: center
+  margin: 0 auto
+  img
+    width: 50%
+  font-weight: 600
+/***** LOGO Text CUSTOM ******/
 
-/**
- * [width description]
- * @type {[type]}
- */
+/******************
+     SHARED
+ ********************/
 .container-shared
-    ul
-      text-align: center
-      list-style-type: none
-      li
-        display: inline
-        padding: 10px 20px
-        a
-          img
-            width: 20%
-          text-decoration: none
+  ul
+    list-style-type: none
+    li
+      display: inline
+      padding: 10px 10px
+      a
+        i
+          font-size: 2em
+/*******************
+     SHARED
+ ********************/
+
 /*********** NAV ***************/
 .nav-wrapper
   ul
     width: 70%
-    margin: 0 auto
+    margin: 0
+    li
+      a
+        color: black
   .brand-logo
     width: 350px
     margin-bottom: 90px
     img
       width: 60%
 /*********** NAV ***************/
-/**
- * [width description]
- * @type {[type]}
- */
-.container-shared
-  ul
-    list-style-type: none
-    li
-      display: inline
-/**
- * [width description]
- * @type {[type]}
- */
+
 .container-news
   width: 80%
   margin: 0 auto
-.nav
-  background-color: orange!important
 .partenaire-container
   ul
     text-align: center
@@ -78,3 +89,9 @@
   a
     i
       vertical-align: middle
+
+/***** fullCalendar ******/
+.container-fullcalendar
+  margin: 10px auto
+  width: 80%
+/***** fullCalendar ******/
