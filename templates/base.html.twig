@@ -43,15 +43,16 @@
   </nav>
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
+    <li><a href="#!">FITNESS</a></li>
+    <li><a href="#!">FIVE</a></li>
     <li class="divider"></li>
-    <li><a href="#!">three</a></li>
+    <li><a href="#!">LAB</a></li>
   </ul>
   <!-- <div class="navbar-fixed"> -->
   <nav>
     <div class="nav-wrapper menu white">
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons orange-text">menu</i></a>
+      <a href="#" class="right white-text orange sidenav-trigger" href="{{ path('book') }}">BOOKING</a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="{{ path('homepage') }}">
@@ -62,13 +63,17 @@
         <li><a href="collapsible.html">FOOT</a></li>
         <li><a href="mobile.html">LEAGUES</a></li>
         <li><a href="mobile.html">KIDS</a></li>
+        <li><a href="mobile.html">ENTREPRISE</a></li>
+        <li><a href="mobile.html">CUP</a></li>
+        <li><a href="mobile.html">STORE</a></li>
+        <li><a href="mobile.html">CONTACT</a></li>
         <!-- Dropdown Trigger -->
         <li>
           <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-            <i class="material-icons right">arrow_drop_down</i>
+            <i class="material-icons right">add</i>
           </a>
         </li>
-        <li class="orange"><a href="{{ path('book') }}">BOOKING</a></li>
+        <li class="orange"><a class=" white-text" href="{{ path('book') }}">BOOKING</a></li>
       </ul>
     </div>
   </nav>
